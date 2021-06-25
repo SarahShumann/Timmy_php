@@ -1,0 +1,183 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="style1.css"> 
+
+</head>
+
+ <body>
+ 
+ 
+<div class ="upperB">
+
+<button class = "sign" id = "signup" onclick = "location.href = 'http://localhost/AdvancedWebProject/SignUpForm.php'">SIGN UP</button>
+<button class = "sign" id = "signin" onclick = "location.href = 'http://localhost/AdvancedWebProject/SignInForm.php'">SIGN IN</button>
+<ul class="listB">
+  <li><a href="">«</a></li>
+    <li><a class="active" href="project.html">1</a></li>
+  <li><a href="project2.html">2</a></li>
+  <li><a href="project3.html">3</a></li>
+  <li><a href="">»</a></li>
+</ul>
+
+
+
+</div>
+  <div class="grayB">
+  <img src = "logo.png" style = "width:250px;height:120px;margin-top:-50px;margin-left:-10px;">
+ 
+  
+
+<div class = "canvas">
+
+   <img class = "blocks" id = "front1" src = "front1.png">
+   <img class = "blocks" src = "grayblock.png">
+   <img class = "blocks" src = "grayblock.png">
+   <img class = "blocks" src = "grayblock.png">
+   <img class = "blocks" src = "grayblock.png">
+   <img class = "blocks" src = "grayblock.png">
+    <img class = "empty">
+   <img class = "blocks" src = "grayblock.png">
+   <img class = "blocks" src = "grayblock.png">
+   <img class = "blocks" src = "grayblock.png">
+   <img class = "blocks" src = "grayblock.png">
+   <img class = "blocks" src = "grayblock.png">
+   <img class = "empty" id = "final1">
+   <img class = "blocks" src = "grayblock.png">
+   <img class = "blocks" src = "grayblock.png">
+   <img class = "blocks" src = "grayblock.png">
+   <img class = "blocks" src = "grayblock.png">
+   <img class = "blocks" src = "grayblock.png">
+   <img class = "blocks" src = "fishbowl.gif">
+    
+   <img class = "blocks" src = "grayblock.png">
+   <img class = "blocks" src = "grayblock.png">
+   <img class = "blocks" src = "grayblock.png">
+   <img class = "blocks" src = "grayblock.png">
+   <img class = "blocks" src = "grayblock.png">
+    <img class = "blocks" src = "grayblock.png">
+	<img class = "blocks" src = "grayblock.png">
+   <img class = "blocks" src = "grayblock.png">
+   <img class = "blocks" src = "grayblock.png">
+   <img class = "blocks" src = "grayblock.png">
+   <img class = "blocks" src = "grayblock.png">
+   
+   
+   
+   
+
+</div>
+<br>
+
+<button id = "run" >Run </button>
+<button id="run" onClick="window.location.reload()">Reset</button>
+ 
+ </div>
+ 
+  
+  <br>
+<div class ="whiteHB1"><img src = "front1.png" 
+ width="58px" height="58px" style="float:left" >
+ <div class="speech-bubble">
+  <div class="arrow bottom right"></div>
+  Take me to Cosmo & Wanda...
+</div>
+
+<img src = "cosmowanda1.jpg" id = "cosmo" style = "width:95px;height:58px;margin-left:790px;margin-top:-60px;">
+
+
+</div>
+
+<div class="box1">
+   
+  <div class="column-header1">
+        <h4>Blocks</h4>
+      </div>
+  
+  <div id = "task1" class = "task" draggable = "true" ondragstart="dragstart_handler(event)" 
+ ondragend="dragend_handler(event)" style ="background-color:thistle">
+        move forward
+		
+  </div>
+  
+  <div id = "task2" class = "task" draggable = "true"  ondragstart="dragstart_handler(event)" 
+ ondragend="dragend_handler(event)" style ="background-color:lavender">
+    turn left
+  </div>
+  
+  <div id = "task3" class = "task" draggable = "true" ondragstart="dragstart_handler(event)" 
+ ondragend="dragend_handler(event)"  style ="background-color:lightpink">
+    turn right    
+  </div>
+  
+  
+  </div>
+ 
+
+  
+
+
+ <div class="box2" >
+    <div class="column-header2" >
+        <h4>Workspace</h4>
+      </div>
+    <div class="box3" id = "box3" ondrop="drop_handler(event)" ondragover="dragover_handler(event)">
+          <div class="column-header3">
+        <h3>when run</h3>
+		
+      </div>
+    </div>
+    </div>
+	
+
+
+ <script type="text/javascript" src="dragdropcopy.js"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+ </script>
+ <script>
+                                                                                                                 
+
+ 
+$(document).ready(function(){
+$("#run").click(function(){
+
+
+var i=0;
+var x = $(".box3").children().toArray()
+
+
+$.each(x, function(i, x1){
+ setTimeout(function(){
+ console.log(x1);
+var temp;
+temp = x[i].id;
+//alert(x[i].id);
+ 
+if (temp== "task1"){moveForward();
+}
+
+if (temp== "task2"){moveLeft();}
+if (temp== "task3"){moveRight();}	
+},i*500);
+
+
+});
+});
+});
+
+
+
+
+$('#run').click(function(e) {
+    this.disabled = true;
+});
+
+
+
+
+ </script>
+
+
+
+</body>
+</html>
